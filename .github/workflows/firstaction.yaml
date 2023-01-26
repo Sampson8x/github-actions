@@ -9,4 +9,4 @@ jobs:
         run: echo "Job ran successfully"
       - name: optional steps
         run: echo "Branch is bug fix"
-        if: $ {{ startsWith(github.ref_name, 'bug') }}
+        if: ${{ startsWith(github.ref_name, 'bug') }}
