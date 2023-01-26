@@ -6,4 +6,4 @@
   debug: true
 - name: "test"
   id: 5
-  debg: true
+  debug: true
