@@ -1,0 +1,28 @@
+name: file-validation
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+    paths:
+      - "**.yaml"
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: pull repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: setup python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: install pytest
+        run: |
+          pip install pytest
+      - name: run tests
+        run: |
+          pytest
