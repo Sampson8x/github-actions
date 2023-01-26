@@ -1,8 +1,5 @@
 name: first-action
-on: 
-  push:
-    paths:
-      - "**.py"
+on: push
 jobs:
   echo:
     runs-on: ubuntu-latest
@@ -10,3 +7,6 @@ jobs:
     steps:
       - name: echo text
         run: echo "Job ran successfully"
+      - name: optional steps
+        run: echo "Branch is bug fix"
+        if: $ {{ startsWith(github.ref_name, 'bug') }}
