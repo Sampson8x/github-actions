@@ -1,0 +1,9 @@
+- name: "should pass"
+  id: 5
+  debug: false
+- name: "should also pass"
+  id: 5
+  debug: true
+- name: "test"
+  id: 5
+  debug: true
